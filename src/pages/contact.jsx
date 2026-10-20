@@ -1,16 +1,11 @@
 import React from 'react';
 
 const Contact = () => {
+  const toggleModal = () => {
+    setIsModalOpen(prevState => !prevState);
+  };
+
     return (
-        <div>
-        <header className="header">
-        <div className="header__content">
-          <h1 className="title">Hi <b className="teal">readers</b>!</h1>
-          <p className="header__para">
-            This is <b className="teal"> your</b> go to site, where you can explore new books, find your next favorite read, and <b className="teal">connect</b> with other book lovers so far.
-          </p>
-        </div>
-      </header>
       <div className="modal">
         <div className="modal__half modal__join">
           <h3 className="modal__title modal__title--about">
@@ -29,7 +24,7 @@ Our members enjoy exclusive access to book discussions, author interviews, and s
           <h4 className="modal__sub-title modal__sub-title--contact teal">
             Fill out the form below and we'll be in touch as soon as possible.
           </h4>
-          <form id="contact__form" onsubmit="contact(event)">
+          <form id="contact__form">
             <div className="form__item">
               <label className="form__item--label">Name</label>
               <input className="input" name="user_name" type="text" />
@@ -50,15 +45,11 @@ Our members enjoy exclusive access to book discussions, author interviews, and s
               Submit
             </button>
           </form>
-          <div className="modal__overlay modal__overlay--loading">
-            <i className="fas fa-spinner"></i>
-          </div>
           <div className="modal__overlay modal__overlay--success">
             Thanks for the message! Looking forward to reading with you soon.
           </div>
         </div>
       </div>
-        </div>
     );
 };
 

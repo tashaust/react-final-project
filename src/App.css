@@ -220,10 +220,10 @@ nav {
   height: 100px;
 }
 
-#personal-logo {
+.personal-logo {
   filter: invert(1);
   width: 100px;
-  height: 75px;
+  height: auto;
 }
 
 .nav__link--list {
@@ -318,11 +318,6 @@ nav {
   justify-content: center;
   align-items: center;
   z-index: -1;
-}
-
-.modal__overlay--loading {
-  background-color: #242424;
-  font-size: 80px;
 }
 
 .modal__overlay--success {

@@ -1,15 +1,19 @@
 import './App.css';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
 import Nav from './components/nav';
 import Contact from './pages/contact';
 
 function App() {
-  <Router></Router>
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <Router>
       <div className="App">
         <Nav />
-        <Route path="/" exact component={Contact} />
+        <Routes>
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </div>
     </Router>
   );
