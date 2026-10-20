@@ -25,7 +25,6 @@ Our members enjoy exclusive access to book discussions, author interviews, and s
           </p>
         </div>
         <div className="modal__half modal__contact">
-                  <i className="fas fa-times modal__exit click" onclick="toggleModal()"></i>
           <h3 className="modal__title modal__title--contact">Ready? Set? Read!</h3>
           <h4 className="modal__sub-title modal__sub-title--contact teal">
             Fill out the form below and we'll be in touch as soon as possible.

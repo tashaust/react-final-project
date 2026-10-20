@@ -6,12 +6,12 @@ import { Link } from 'react-router-dom';
 const Nav = () => {
     return (
         <nav>
-          {/* <figure>
+          <figure>
           <img
             className="personal-logo"
             src={PersonalLogo}
           />
-        </figure> */}
+        </figure>
         <ul className="nav__link--list">
           <li className="nav__link">
             <Link
