@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Nav from './components/nav';
 import Contact from './pages/contact';
 import Landing from './components/landing';
+import Footer from './components/footer';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -16,9 +17,7 @@ function App() {
           <Contact setIsModalOpen={setIsModalOpen} />
         )}
         <Landing />
-        <Routes>
-
-        </Routes>
+        <Footer />
       </div>
     </Router>
   );
