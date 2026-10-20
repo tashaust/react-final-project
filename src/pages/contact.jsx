@@ -1,12 +1,10 @@
 import React from 'react';
 
-const Contact = () => {
-  const toggleModal = () => {
-    setIsModalOpen(prevState => !prevState);
-  };
+const Contact = ({ setIsModalOpen }) => {
 
     return (
       <div className="modal">
+        <button onClick={() => setIsModalOpen(false)}>X</button>
         <div className="modal__half modal__join">
           <h3 className="modal__title modal__title--about">
             Want to join the <b className="teal">community</b>?

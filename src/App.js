@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 import Nav from './components/nav';
 import Contact from './pages/contact';
+import Landing from './components/landing';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -10,9 +11,13 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Nav />
+        <Nav setIsModalOpen={setIsModalOpen} />
+        {isModalOpen && (
+          <Contact setIsModalOpen={setIsModalOpen} />
+        )}
+        <Landing />
         <Routes>
-          <Route path="/contact" element={<Contact />} />
+
         </Routes>
       </div>
     </Router>
