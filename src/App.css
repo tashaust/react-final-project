@@ -303,7 +303,7 @@ nav {
   right: 20px;
   background: transparent;
   border: none;
-  color: #242424;
+  color: white;
   font-size: 24px;
   z-index: 100;
 }
@@ -364,7 +364,6 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 60px;
   gap: 8px;
 }
 
