@@ -1,27 +1,39 @@
 import React from "react";
+import { useState } from "react";
 
 const Books = () => {
+    const [selectedGenres, setSelectedGenres] = useState([]);
+
+function filterGenres(e) {
+  const { value, checked } = e.target;
+
+  setSelectedGenres(prev =>
+    checked
+      ? [...prev, value]
+      : prev.filter(genre => genre !== value)
+  );
+}
   return (
     <div className= "container">
     <form className="search__bar" id="search__bar">
     <input type="text" className="search__bar--input" placeholder="Search by genre, author, title, etc..." required />
     <button type="submit" className="search__bar--btn">Search</button>
 </form>
-                  <h4 class="section__results">Search results:</h4>
+        <h4 class="section__results">Search results:</h4>
         <div className="results__content">
           <form id="genreFilter" className="genre__filter">
     <h2>Filter by Genre</h2>
     <label>
-        <input className="genre__checkbox" type="checkbox" value="Fiction" onchange="filterGenres()" /> Fiction
+        <input className="genre__checkbox" type="checkbox" value="Fiction" onChange={filterGenres} /> Fiction
     </label>
     <label>
-        <input className="genre__checkbox" type="checkbox" value="Thriller" onchange="filterGenres()" /> Thriller
+        <input className="genre__checkbox" type="checkbox" value="Thriller" onChange={filterGenres} /> Thriller
     </label>
     <label>
-        <input className="genre__checkbox" type="checkbox" value="Fantasy" onchange="filterGenres()" /> Fantasy
+        <input className="genre__checkbox" type="checkbox" value="Fantasy" onChange={filterGenres} /> Fantasy
     </label>
     <label>
-        <input className="genre__checkbox" type="checkbox" value="Romance" onchange="filterGenres()" /> Romance
+        <input className="genre__checkbox" type="checkbox" value="Romance" onChange={filterGenres} /> Romance
     </label>
 </form>
 <div className="results__wrapper">
