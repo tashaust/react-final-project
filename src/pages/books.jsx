@@ -37,32 +37,30 @@ function filterGenres(e) {
     </label>
 </form>
 <div className="results__wrapper">
-     <ul className="results__list">
-            <li className="results__item" data-genre="Thriller">
-                <img className="results__img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJeverBrTxcVMIhp9gVszN10fs7Gih1RWqCUN2nTb9IwFtz82C3MxBiLE&s=10" />
-                <button className="results__btn">View Details</button>
-            </li>
-            <li className="results__item" data-genre="Thriller">
-                <img className="results__img" src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1704216161i/164444179.jpg" />
-                <button className="results__btn">View Details</button>
-            </li>
-            <li className="results__item" data-genre="Thriller">
-                <img className="results__img" src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1661428846i/62080187.jpg" />
-                <button className="results__btn">View Details</button>
-            </li>
-            <li className="results__item" data-genre="Thriller">
-                <img className="results__img" src="https://m.media-amazon.com/images/I/91lslnZ-btL._AC_UF1000,1000_QL80_.jpg" />
-                <button className="results__btn">View Details</button>
-            </li>
-            <li className="results__item" data-genre="Thriller">
-                <img className="results__img" src="https://m.media-amazon.com/images/I/81ZO5VhpHtL._AC_UF1000,1000_QL80_.jpg" />
-                <button className="results__btn">View Details</button>
-            </li>
-            <li className="results__item" data-genre="Thriller">
-                <img className="results__img" src="https://m.media-amazon.com/images/I/81HVQp-OMfL._AC_UF1000,1000_QL80_.jpg" />
-                <button className="results__btn">View Details</button>
-            </li>
+    {(selectedGenres.length === 0 ||
+        selectedGenres.includes("Thriller")) && (
+             <ul className="results__list">
+            {<><li className="results__item" data-genre="Thriller">
+        <img className="results__img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJeverBrTxcVMIhp9gVszN10fs7Gih1RWqCUN2nTb9IwFtz82C3MxBiLE&s=10" />
+        <button className="results__btn">View Details</button>
+    </li><li className="results__item" data-genre="Thriller">
+            <img className="results__img" src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1704216161i/164444179.jpg" />
+            <button className="results__btn">View Details</button>
+        </li><li className="results__item" data-genre="Thriller">
+            <img className="results__img" src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1661428846i/62080187.jpg" />
+            <button className="results__btn">View Details</button>
+        </li><li className="results__item" data-genre="Thriller">
+            <img className="results__img" src="https://m.media-amazon.com/images/I/91lslnZ-btL._AC_UF1000,1000_QL80_.jpg" />
+            <button className="results__btn">View Details</button>
+        </li><li className="results__item" data-genre="Thriller">
+            <img className="results__img" src="https://m.media-amazon.com/images/I/81ZO5VhpHtL._AC_UF1000,1000_QL80_.jpg" />
+            <button className="results__btn">View Details</button>
+        </li><li className="results__item" data-genre="Thriller">
+            <img className="results__img" src="https://m.media-amazon.com/images/I/81HVQp-OMfL._AC_UF1000,1000_QL80_.jpg" />
+            <button className="results__btn">View Details</button>
+        </li></>}
      </ul> 
+        )}
      <ul className="results__list">
             <li className="results__item" data-genre="Romance">
                 <img className="results__img" src="https://m.media-amazon.com/images/I/71yIEgCpnoL._AC_UF1000,1000_QL80_.jpg" />
