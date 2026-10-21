@@ -5,6 +5,7 @@ import Nav from './components/nav';
 import Contact from './pages/contact';
 import Landing from './components/landing';
 import Books from './pages/books';
+import BookInfo from './pages/bookinfo';
 import Footer from './components/footer';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/books" element={<Books />} />
+          <Route path="/books/:id" element={<BookInfo />} />
         </Routes>
         <Footer />
       </div>
