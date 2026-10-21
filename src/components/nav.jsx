@@ -21,7 +21,7 @@ const Nav = ({ setIsModalOpen }) => {
           </li>
           <li className="nav__link">
             <Link
-              to="#search__bar"
+              to="/books"
               className="nav__link--anchor link__hover-effect 
               link__hover-effect--black"
               >Find Your Book</Link>

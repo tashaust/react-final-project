@@ -17,8 +17,10 @@ function App() {
         {isModalOpen && (
           <Contact setIsModalOpen={setIsModalOpen} />
         )}
-        <Landing />
-        <Books />
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/books" element={<Books />} />
+        </Routes>
         <Footer />
       </div>
     </Router>
