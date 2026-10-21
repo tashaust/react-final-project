@@ -40,10 +40,10 @@ function filterGenres(e) {
     {(selectedGenres.length === 0 ||
         selectedGenres.includes("Thriller")) && (
              <ul className="results__list">
-            {<><li className="results__item" data-genre="Thriller">
+            <li className="results__item" data-genre="Thriller">
         <img className="results__img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJeverBrTxcVMIhp9gVszN10fs7Gih1RWqCUN2nTb9IwFtz82C3MxBiLE&s=10" />
         <button className="results__btn">View Details</button>
-    </li><li className="results__item" data-genre="Thriller">
+        </li><li className="results__item" data-genre="Thriller">
             <img className="results__img" src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1704216161i/164444179.jpg" />
             <button className="results__btn">View Details</button>
         </li><li className="results__item" data-genre="Thriller">
@@ -58,10 +58,12 @@ function filterGenres(e) {
         </li><li className="results__item" data-genre="Thriller">
             <img className="results__img" src="https://m.media-amazon.com/images/I/81HVQp-OMfL._AC_UF1000,1000_QL80_.jpg" />
             <button className="results__btn">View Details</button>
-        </li></>}
+        </li>
      </ul> 
         )}
-     <ul className="results__list">
+        {(selectedGenres.length === 0 ||
+        selectedGenres.includes("Romance")) && (
+             <ul className="results__list">
             <li className="results__item" data-genre="Romance">
                 <img className="results__img" src="https://m.media-amazon.com/images/I/71yIEgCpnoL._AC_UF1000,1000_QL80_.jpg" />
                 <button className="results__btn">View Details</button>
@@ -87,7 +89,10 @@ function filterGenres(e) {
                 <button className="results__btn">View Details</button>
             </li>
      </ul> 
-     <ul className="results__list">
+        )}
+        {(selectedGenres.length === 0 ||
+        selectedGenres.includes("Fantasy")) && (
+             <ul className="results__list">
             <li className="results__item" data-genre="Fantasy">
                 <img className="results__img" src="https://m.media-amazon.com/images/I/81OBhRM2tjL._AC_UF1000,1000_QL80_.jpg" />
                 <button className="results__btn">View Details</button>
@@ -112,7 +117,10 @@ function filterGenres(e) {
                 <img className="results__img" src="https://m.media-amazon.com/images/I/81k5yQ9qkcL._AC_UF350,350_QL50_.jpg" />
                 <button className="results__btn">View Details</button>
             </li>
-     </ul> 
+      </ul> 
+          )}
+          {(selectedGenres.length === 0 ||
+          selectedGenres.includes("Fiction")) && (
      <ul className="results__list">
             <li className="results__item" data-genre="Fiction">
                 <img className="results__img" src="https://m.media-amazon.com/images/I/81lXSf+fNXL._AC_UF1000,1000_QL80_.jpg" />
@@ -138,7 +146,8 @@ function filterGenres(e) {
                 <img className="results__img" src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1681839850i/21853621.jpg" />
                 <button className="results__btn">View Details</button>
             </li>
-     </ul> 
+      </ul> 
+          )}
     </div>
     </div>
     </div>
