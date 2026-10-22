@@ -2,6 +2,153 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+const books = [
+  {
+    id: "WORK_ID_1",
+    title: "Gone Girl",
+    genre: "Thriller",
+    cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJeverBrTxcVMIhp9gVszN10fs7Gih1RWqCUN2nTb9IwFtz82C3MxBiLE&s=10"
+  },
+  {
+    id: "WORK_ID_2",
+    title: "First Lie Wins",
+    genre: "Thriller",
+    cover: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1704216161i/164444179.jpg"
+  },
+  {
+    id: "WORK_ID_2",
+    title: "Never Lie",
+    genre: "Thriller",
+    cover: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1661428846i/62080187.jpg"
+  },
+  {
+    id: "WORK_ID_2",
+    title: "The Silent Patient",
+    genre: "Thriller",
+    cover: "https://m.media-amazon.com/images/I/91lslnZ-btL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    id: "WORK_ID_2",
+    title: "The Housemaid",
+    genre: "Thriller",
+    cover: "https://m.media-amazon.com/images/I/81ZO5VhpHtL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    id: "WORK_ID_2",
+    title: "Verity",
+    genre: "Thriller",
+    cover: "https://m.media-amazon.com/images/I/81HVQp-OMfL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    id: "WORK_ID_2",
+    title: "The Love Hypothesis",
+    genre: "Romance",
+    cover: "https://m.media-amazon.com/images/I/71yIEgCpnoL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    id: "WORK_ID_2",
+    title: "Just For the Summer",
+    genre: "Romance",
+    cover: "https://www.hachettebookgroup.com/wp-content/uploads/2024/04/9781538704448_d509b0.jpg"
+  },
+  {
+    id: "WORK_ID_2",
+    title: "People We Meet on Vacation",
+    genre: "Romance",
+    cover: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1748450140i/54985743.jpg"
+  },
+  {
+    id: "WORK_ID_2",
+    title: "It Ends With Us",
+    genre: "Romance",
+    cover: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1688011813i/27362503.jpg"
+  },
+  {
+    id: "WORK_ID_2",
+    title: "The Fault In Our Stars",
+    genre: "Romance",
+    cover: "https://images.penguinrandomhouse.com/cover/9780142424179"
+  },
+  {
+    id: "WORK_ID_2",
+    title: "Beach Read",
+    genre: "Romance",
+    cover: "https://m.media-amazon.com/images/I/71kdiN5Y1YL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    id: "WORK_ID_2",
+    title: "A Court of Thorns and Roses",
+    genre: "Fantasy",
+    cover: "https://m.media-amazon.com/images/I/81OBhRM2tjL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    id: "WORK_ID_2",
+    title: "Fourth Wing",
+    genre: "Fantasy",
+    cover: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1761312598i/61431922.jpg"
+  },
+  {
+    id: "WORK_ID_2",
+    title: "From Blood and Ash",
+    genre: "Fantasy",
+    cover: "https://m.media-amazon.com/images/I/81A-LrD-RSL._UF1000,1000_QL80_.jpg"
+  },
+  {
+    id: "WORK_ID_2",
+    title: "City Of Bones",
+    genre: "Fantasy",
+    cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwpK0MS0eVdRrgtHEmzwqVIwGTTXAlapGE30RybMPcLw&s=10"
+  },
+  {
+    id: "WORK_ID_2",
+    title: "Twilight",
+    genre: "Fantasy",
+    cover: "https://i5.walmartimages.com/seo/Twilight-Saga-Twilight-Book-1-Hardcover-9780316160179_4a3210d0-b277-4431-837f-84de1d18d70f.02e3e81c9bcf12aeba4927cfdf23fa77.jpeg"
+  },
+  {
+    id: "WORK_ID_2",
+    title: "Powerless",
+    genre: "Fantasy",
+    cover: "https://m.media-amazon.com/images/I/81k5yQ9qkcL._AC_UF350,350_QL50_.jpg"
+  },
+  {
+    id: "WORK_ID_2",
+    title: "Wild Dark Shore",
+    genre: "Fiction",
+    cover: "https://m.media-amazon.com/images/I/81lXSf+fNXL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    id: "WORK_ID_2",
+    title: "Great Big Beautiful Life",
+    genre: "Fiction",
+    cover: "https://bookshelfthomasville.com/cdn/shop/files/GREATBIGBEAUTIFULLIFE_9bc81a2f-a769-44db-adf7-398d2ff5b045.jpg?v=1729272916"
+  },
+  {
+    id: "WORK_ID_2",
+    title: "The Giver",
+    genre: "Fiction",
+    cover: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1342493368i/3636.jpg"
+  },
+  {
+    id: "WORK_ID_2",
+    title: "The Midnight Train",
+    genre: "Fiction",
+    cover: "https://m.media-amazon.com/images/I/71hcMw4Z-bL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    id: "WORK_ID_2",
+    title: "The Lost Bookshop",
+    genre: "Fiction",
+    cover: "https://m.media-amazon.com/images/I/91Sy3S-198L._UF1000,1000_QL80_.jpg"
+  },
+  {
+    id: "WORK_ID_2",
+    title: "The Nightingale",
+    genre: "Fiction",
+    cover: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1681839850i/21853621.jpg"
+  }
+];
+
 const Books = () => {
     const [selectedGenres, setSelectedGenres] = useState([]);
 
@@ -38,118 +185,30 @@ function filterGenres(e) {
     </label>
 </form>
 <div className="results__wrapper">
-    {(selectedGenres.length === 0 ||
-        selectedGenres.includes("Thriller")) && (
-             <ul className="results__list">
-            <li className="results__item" data-genre="Thriller">
-        <img className="results__img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJeverBrTxcVMIhp9gVszN10fs7Gih1RWqCUN2nTb9IwFtz82C3MxBiLE&s=10" />
-        <Link to={`/books/${book.key.split("/").pop()}`} target="_blank" rel="noopener noreferrer" className="results__btn">View Details</Link>
-        </li><li className="results__item" data-genre="Thriller">
-            <img className="results__img" src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1704216161i/164444179.jpg" />
-            <Link to={`/books/${book.key.split("/").pop()}`} target="_blank" rel="noopener noreferrer" className="results__btn">View Details</Link>
-        </li><li className="results__item" data-genre="Thriller">
-            <img className="results__img" src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1661428846i/62080187.jpg" />
-            <Link to={`/books/${book.key.split("/").pop()}`} target="_blank" rel="noopener noreferrer" className="results__btn">View Details</Link>
-        </li><li className="results__item" data-genre="Thriller">
-            <img className="results__img" src="https://m.media-amazon.com/images/I/91lslnZ-btL._AC_UF1000,1000_QL80_.jpg" />
-            <Link to={`/books/${book.key.split("/").pop()}`} target="_blank" rel="noopener noreferrer" className="results__btn">View Details</Link>
-        </li><li className="results__item" data-genre="Thriller">
-            <img className="results__img" src="https://m.media-amazon.com/images/I/81ZO5VhpHtL._AC_UF1000,1000_QL80_.jpg" />
-            <Link to={`/books/${book.key.split("/").pop()}`} target="_blank" rel="noopener noreferrer" className="results__btn">View Details</Link>
-        </li><li className="results__item" data-genre="Thriller">
-            <img className="results__img" src="https://m.media-amazon.com/images/I/81HVQp-OMfL._AC_UF1000,1000_QL80_.jpg" />
-            <Link to={`/books/${book.key.split("/").pop()}`} target="_blank" rel="noopener noreferrer" className="results__btn">View Details</Link>
-        </li>
-     </ul> 
-        )}
-        {(selectedGenres.length === 0 ||
-        selectedGenres.includes("Romance")) && (
-             <ul className="results__list">
-            <li className="results__item" data-genre="Romance">
-                <img className="results__img" src="https://m.media-amazon.com/images/I/71yIEgCpnoL._AC_UF1000,1000_QL80_.jpg" />
-                <Link to={`/books/${book.key.split("/").pop()}`} target="_blank" rel="noopener noreferrer" className="results__btn">View Details</Link>
-            </li>
-            <li className="results__item" data-genre="Romance">
-                <img className="results__img" src="https://www.hachettebookgroup.com/wp-content/uploads/2024/04/9781538704448_d509b0.jpg" />
-                <Link to={`/books/${book.key.split("/").pop()}`} target="_blank" rel="noopener noreferrer" className="results__btn">View Details</Link>
-            </li>
-            <li className="results__item" data-genre="Romance">
-                <img className="results__img" src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1748450140i/54985743.jpg" />
-                <Link to={`/books/${book.key.split("/").pop()}`} target="_blank" rel="noopener noreferrer" className="results__btn">View Details</Link>
-            </li>
-            <li className="results__item" data-genre="Romance">
-                <img className="results__img" src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1688011813i/27362503.jpg" />
-                <Link to={`/books/${book.key.split("/").pop()}`} target="_blank" rel="noopener noreferrer" className="results__btn">View Details</Link>
-            </li>
-            <li className="results__item" data-genre="Romance">
-                <img className="results__img" src="https://m.media-amazon.com/images/I/71kdiN5Y1YL._AC_UF1000,1000_QL80_.jpg" />
-                <Link to={`/books/${book.key.split("/").pop()}`} target="_blank" rel="noopener noreferrer" className="results__btn">View Details</Link>
-            </li>
-            <li className="results__item" data-genre="Romance">
-                <img className="results__img" src="https://images.penguinrandomhouse.com/cover/9780142424179" />
-                <Link to={`/books/${book.key.split("/").pop()}`} target="_blank" rel="noopener noreferrer" className="results__btn">View Details</Link>
-            </li>
-     </ul> 
-        )}
-        {(selectedGenres.length === 0 ||
-        selectedGenres.includes("Fantasy")) && (
-             <ul className="results__list">
-            <li className="results__item" data-genre="Fantasy">
-                <img className="results__img" src="https://m.media-amazon.com/images/I/81OBhRM2tjL._AC_UF1000,1000_QL80_.jpg" />
-                <Link to={`/books/${book.key.split("/").pop()}`} target="_blank" rel="noopener noreferrer" className="results__btn">View Details</Link>
-            </li>
-            <li className="results__item" data-genre="Fantasy">
-                <img className="results__img" src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1761312598i/61431922.jpg" />
-                <Link to={`/books/${book.key.split("/").pop()}`} target="_blank" rel="noopener noreferrer" className="results__btn">View Details</Link>
-            </li>
-            <li className="results__item" data-genre="Fantasy">
-                <img className="results__img" src="https://m.media-amazon.com/images/I/81A-LrD-RSL._UF1000,1000_QL80_.jpg" />
-                <Link to={`/books/${book.key.split("/").pop()}`} target="_blank" rel="noopener noreferrer" className="results__btn">View Details</Link>
-            </li>
-            <li className="results__item" data-genre="Fantasy">
-                <img className="results__img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwpK0MS0eVdRrgtHEmzwqVIwGTTXAlapGE30RybMPcLw&s=10" />
-                <Link to={`/books/${book.key.split("/").pop()}`} target="_blank" rel="noopener noreferrer" className="results__btn">View Details</Link>
-            </li>
-            <li className="results__item" data-genre="Fantasy">
-                <img className="results__img" src="https://i5.walmartimages.com/seo/Twilight-Saga-Twilight-Book-1-Hardcover-9780316160179_4a3210d0-b277-4431-837f-84de1d18d70f.02e3e81c9bcf12aeba4927cfdf23fa77.jpeg" />
-                <Link to={`/books/${book.key.split("/").pop()}`} target="_blank" rel="noopener noreferrer" className="results__btn">View Details</Link>
-            </li>
-            <li className="results__item" data-genre="Fantasy">
-                <img className="results__img" src="https://m.media-amazon.com/images/I/81k5yQ9qkcL._AC_UF350,350_QL50_.jpg" />
-                <Link to={`/books/${book.key.split("/").pop()}`} target="_blank" rel="noopener noreferrer" className="results__btn">View Details</Link>
-            </li>
-      </ul> 
-          )}
-          {(selectedGenres.length === 0 ||
-          selectedGenres.includes("Fiction")) && (
-     <ul className="results__list">
-            <li className="results__item" data-genre="Fiction">
-                <img className="results__img" src="https://m.media-amazon.com/images/I/81lXSf+fNXL._AC_UF1000,1000_QL80_.jpg" />
-                <Link to={`/books/${book.key.split("/").pop()}`} target="_blank" rel="noopener noreferrer" className="results__btn">View Details</Link>
-            </li>
-            <li className="results__item" data-genre="Fiction">
-                <img className="results__img" src="https://bookshelfthomasville.com/cdn/shop/files/GREATBIGBEAUTIFULLIFE_9bc81a2f-a769-44db-adf7-398d2ff5b045.jpg?v=1729272916" />
-                <Link to={`/books/${book.key.split("/").pop()}`} target="_blank" rel="noopener noreferrer" className="results__btn">View Details</Link>
-            </li>
-            <li className="results__item" data-genre="Fiction">
-                <img className="results__img" src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1342493368i/3636.jpg" />
-                <Link to={`/books/${book.key.split("/").pop()}`} target="_blank" rel="noopener noreferrer" className="results__btn">View Details</Link>
-            </li>
-            <li className="results__item" data-genre="Fiction">
-                <img className="results__img" src="https://m.media-amazon.com/images/I/71hcMw4Z-bL._AC_UF1000,1000_QL80_.jpg" />
-                <Link to={`/books/${book.key.split("/").pop()}`} target="_blank" rel="noopener noreferrer" className="results__btn">View Details</Link>
-            </li>
-            <li className="results__item" data-genre="Fiction">
-                <img className="results__img" src="https://m.media-amazon.com/images/I/91Sy3S-198L._UF1000,1000_QL80_.jpg" />
-                <Link to={`/books/${book.key.split("/").pop()}`} target="_blank" rel="noopener noreferrer" className="results__btn">View Details</Link>
-            </li>
-            <li className="results__item" data-genre="Fiction">
-                <img className="results__img" src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1681839850i/21853621.jpg" />
-                <Link to={`/books/${book.key.split("/").pop()}`} target="_blank" rel="noopener noreferrer" className="results__btn">View Details</Link>
-            </li>
-      </ul> 
-          )}
-    </div>
+            <ul className="results__list">
+            {books
+            .filter(
+                (book) =>
+                    selectedGenres.length === 0 ||
+                    selectedGenres.includes(book.genre)
+            )
+            .map((book) => (
+            <li className="results__item" key={book.id}> 
+            <img 
+            className="results__img"
+            src={book.cover}
+            alt={book.title}
+            />
+            <Link 
+            to={`/books/${book.id}`} 
+                target="_blank" 
+                rel="noopener noreferrer" className="results__btn">
+                View Details
+                </Link>
+                </li>
+            ))}
+            </ul>
+        </div>
     </div>
     </div>
   );
