@@ -405,15 +405,6 @@ nav {
 
 /* RESULTS */
 
-#apiResults {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 20px;
-padding-top: 48px;
-text-align: center;
-font-size: 12px;
-}
-
 .section__results {
 font-size: 28px;
 text-align: left;
