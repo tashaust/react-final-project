@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const books = [
   {
-    id: "WORK_ID_1",
+    id: "OL35889560M",
     title: "Gone Girl",
     genre: "Thriller",
     cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJeverBrTxcVMIhp9gVszN10fs7Gih1RWqCUN2nTb9IwFtz82C3MxBiLE&s=10"
