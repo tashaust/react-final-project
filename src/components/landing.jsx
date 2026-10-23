@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Landing = [
+const books = [
   {
     id: "OL45177696W",
     title: "Yesteryear",
@@ -43,6 +43,8 @@ const Landing = [
     cover: "https://mpd-biblio-covers.imgix.net/9781250337818.jpg"
   }
   ];
+
+  function Landing() {
   return (
     <div>
       <header className="header">
@@ -87,6 +89,6 @@ const Landing = [
       </div>
     </div>
   );
-};
+  }
 
 export default Landing;

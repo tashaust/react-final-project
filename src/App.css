@@ -460,27 +460,25 @@ padding-left: 20px;
   object-fit: cover;
   display: block;
   border-radius: 20px;
-  transition: all 600ms ease;
-}
-
-.results__img:hover  {
-  opacity: 0.7;
 }
 
 .results__item {
     position: relative;
 }
 
+li.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
 .results__btn {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: white;
-    color: #048c7f;
-    padding: 10px 14px;
+    background-color: #048c7f;
+    color: white;
+    padding: 8px 16px;
     border: none;
-    border-radius: 6px;
+    border-radius: 4px;
     cursor: pointer;
     opacity: 0;
     transition: opacity 300ms ease;
@@ -488,6 +486,10 @@ padding-left: 20px;
 
 .results__item:hover .results__btn {
     opacity: 1;
+}
+
+.results__btn:hover {
+  background-color: #014d4e;
 }
 
 
