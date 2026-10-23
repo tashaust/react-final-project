@@ -206,8 +206,6 @@ function filterGenres(e) {
                     </div>
                 ))}
             </div>
-        </div>
-    );
         <div>
         <h4 className="section__results">Search results:</h4>
         <div className="results__content">
@@ -253,7 +251,8 @@ function filterGenres(e) {
         </div>
     </div>
     </div>
-    }
-)}
+    </div>
+  );
+};
 
 export default Books;
