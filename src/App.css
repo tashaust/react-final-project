@@ -463,7 +463,9 @@ padding-left: 20px;
 }
 
 .results__item {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 li.search {
@@ -490,6 +492,10 @@ li.search {
 
 .results__btn:hover {
   background-color: #014d4e;
+}
+
+.search:hover .results__btn {
+  opacity: 1;
 }
 
 
