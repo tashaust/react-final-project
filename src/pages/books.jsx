@@ -162,42 +162,54 @@ function filterGenres(e) {
   );
 }
   return (
-    <div className= "container">
-    <form className="search__bar" id="search__bar">
-    <input type="text" className="search__bar--input" placeholder="Search by genre, author, title, etc..." required />
-    <button type="submit" className="search__bar--btn">Search</button>
-</form>
-document.getElementById('search__bar').addEventListener('submit', function(event) {
-    event.preventDefault(); // 
+    function BookSearch() {
+    const [query, setQuery] = useState('');
+    const [books, setBooks] = useState([]); 
 
-    const query = document.querySelector('.search__bar--input').value; // 
-    fetchBooks(query); // 
-});
+    const handleSearch = (event) => {
+        event.preventDefault(); 
 
-function fetchBooks(query) {
-    const apiUrl = `https://openlibrary.org/search.json?q=${query}`;
+        fetchBooks(query); 
+    };
 
-    fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => displayResults(data))
-        .catch(error => console.error('Error fetching data:', error));
-}
+    const fetchBooks = (query) => {
+        const apiUrl = `https://openlibrary.org/search.json?q=${query}`
 
-function displayResults(data) {
-    const resultsContainer = document.getElementById('apiResults');
-    resultsContainer.innerHTML = ''; 
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => displayResults(data))
+            .catch(error => console.error('Error fetching data:', error));
+    };
 
-    data.docs.forEach(book => {
-        const bookDiv = document.createElement('div');
-bookDiv.innerHTML = `
-  <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" alt="${book.title}">
-  <h3>${book.title}</h3>
-  <p>${book.author_name}</p>
-`;
-        resultsContainer.appendChild(bookDiv);
-    });
-}
-        <h4 class="section__results">Search results:</h4>
+    const displayResults = (data) => {
+        setBooks(data.docs); 
+    };
+
+    return (
+        <div className="container">
+            <form id="search__bar" onSubmit={handleSearch}>
+                <input
+                    type="text"
+                    className="search__bar--input"
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    placeholder="Search by genre, author, title, etc..."
+                />
+                <button type="submit">Search</button>
+            </form>
+            <div id="apiResults">
+                {books.map(book => (
+                    <div key={book.key}>
+                        <img src={`https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`} alt={book.title} />
+                        <h3>{book.title}</h3>
+                        <p>{book.author_name?.join(', ')}</p> 
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+        <div>
+        <h4 className="section__results">Search results:</h4>
         <div className="results__content">
           <form id="genreFilter" className="genre__filter">
     <h2>Filter by Genre</h2>
@@ -241,7 +253,7 @@ bookDiv.innerHTML = `
         </div>
     </div>
     </div>
-  );
-};
+    }
+)}
 
 export default Books;
