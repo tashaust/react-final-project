@@ -10,6 +10,7 @@ const Nav = ({ setIsModalOpen }) => {
           <img
             className="personal-logo"
             src={PersonalLogo}
+            alt="Personal Logo"
           />
         </figure>
         <ul className="nav__link--list">

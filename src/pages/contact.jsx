@@ -9,7 +9,6 @@ const Contact = ({ setIsModalOpen }) => {
           <h3 className="modal__title modal__title--about">
             Want to join the <b className="teal">community</b>?
           </h3>
-          <h4 className="modal__sub-title modal__sub-title--about"></h4>
           <p className="modal__para">
 Whether you're a seasoned reader or just starting your literary journey, our community welcomes everyone. Join us to share your thoughts, discover new books, and connect with fellow book enthusiasts.
             <br />

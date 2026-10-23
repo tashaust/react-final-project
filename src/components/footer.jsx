@@ -10,6 +10,7 @@ const Footer = () => {
           <img
             className="footer__logo--img"
             src={PersonalLogo}
+            alt="Personal Logo"
           />
           </figure>
           <div className="footer__copywright">Copywright © 2026 Tasha Austin</div>
