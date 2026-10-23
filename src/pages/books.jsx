@@ -167,6 +167,36 @@ function filterGenres(e) {
     <input type="text" className="search__bar--input" placeholder="Search by genre, author, title, etc..." required />
     <button type="submit" className="search__bar--btn">Search</button>
 </form>
+document.getElementById('search__bar').addEventListener('submit', function(event) {
+    event.preventDefault(); // 
+
+    const query = document.querySelector('.search__bar--input').value; // 
+    fetchBooks(query); // 
+});
+
+function fetchBooks(query) {
+    const apiUrl = `https://openlibrary.org/search.json?q=${query}`;
+
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => displayResults(data))
+        .catch(error => console.error('Error fetching data:', error));
+}
+
+function displayResults(data) {
+    const resultsContainer = document.getElementById('apiResults');
+    resultsContainer.innerHTML = ''; 
+
+    data.docs.forEach(book => {
+        const bookDiv = document.createElement('div');
+bookDiv.innerHTML = `
+  <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" alt="${book.title}">
+  <h3>${book.title}</h3>
+  <p>${book.author_name}</p>
+`;
+        resultsContainer.appendChild(bookDiv);
+    });
+}
         <h4 class="section__results">Search results:</h4>
         <div className="results__content">
           <form id="genreFilter" className="genre__filter">
